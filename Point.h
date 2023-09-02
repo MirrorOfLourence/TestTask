@@ -6,14 +6,14 @@ public:
         :m_x(0.f), m_y(0.f)
     {
     };
-    Point(float x, float y)
+    Point(long double x, long double y)
         :m_x(x), m_y(y)
     {
     };
-    float getDistanceFromOrigin();
+    long double getDistanceFromOrigin();
 private:
-    float m_x;
-    float m_y;
+    long double m_x;
+    long double m_y;
 };
 
 

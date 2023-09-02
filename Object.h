@@ -1,21 +1,29 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "Point.h"
 
 class Object
 {
 public:
     Object();
-    Object(std::string name, float x, float y, std::string type);
+    Object(std::string name, long double x, long double y, std::string type);
+    Object(const std::string& line);
 
-    bool compareByDistance(Object i, Object j);
-    float getDistanceFromOrigin();
-    void print(std::ofstream &out);
+    long double getDistanceFromOrigin();
+    std::string getFieldFromLine(const std::string& line, size_t& posOfSpace);
+    std::string getName();
+    std::string getType();
+    long double  getTimeOfCreation();
+
+    bool checkIfValid();
+    void print(std::ofstream &fout);
 private:
     std::string m_name;
     std::string m_type;
     Point m_coordinates;
-    time_t m_timeOfCreating;
-    float m_distanceFromOrigin;
+    long double m_timeOfCreation;
+    long double m_distanceFromOrigin;
+    bool m_isValid;
 };
 
